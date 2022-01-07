@@ -72,3 +72,16 @@
     font-size: 30px;
     font-weight: 600;
   }
+  .singlePostButton
+  {
+    border: none;
+    width: 100px;
+    background-color: teal;
+    color: white;
+    padding:10px;
+    border-radius:5px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
+
+  }
