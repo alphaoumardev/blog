@@ -17,7 +17,7 @@ const  SinglePost=()=>
   const [desc,setDesc]=useState("")
   const [updateMode, setUpdateMode]=useState(false)
 
-  const handleClick = async ()=>
+  const handleDelete = async ()=>
   {
     try
     {
@@ -53,7 +53,7 @@ const  SinglePost=()=>
     <div className="singlePost">
       <div className="singlePostWrapper">
         {PF+post.photo &&(<img className="singlePostImg" alt="" src={post.photo} />)}
-        {updateMode ? <input type="text" className="singlePostTitle"  value={title} autoFocus
+        {updateMode ? <input type="text" className="writeInput"  value={title} autoFocus
                              onChange={(e)=>setTitle(e.target.value)}/>:
             (
                 <h1 className="singlePostTitle">
@@ -61,7 +61,7 @@ const  SinglePost=()=>
                   {post.username === user?.username && (
                       <div className="singlePostEdit">
                         <i className="singlePostIcon far fa-edit" onClick={()=>setUpdateMode(true)}/>
-                        <i className="singlePostIcon far fa-trash-alt" onClick={handleClick}/>
+                        <i className="singlePostIcon far fa-trash-alt" onClick={handleDelete}/>
                       </div>
                   )}
 
@@ -76,7 +76,7 @@ const  SinglePost=()=>
           </span>
           <span>{new Date(post.createdAt).toDateString()}</span>
         </div>
-        {updateMode ? <textarea className="singlePostDesc" value={desc}
+        {updateMode ? <textarea className="writeInput " value={desc}
                                 onChange={(e)=>setDesc(e.target.value)}/>:
             (<p className="singlePostDesc">{desc}</p>)}
 

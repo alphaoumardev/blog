@@ -11,7 +11,7 @@ const Settings = ()=>
   const [password, setPassword]=useState("")
   const [email, setEmail]=useState("")
   const [success, setSuccess]=useState(false)
-  const PF = "http://localhost:5000/images/"
+  // const PF = "http://localhost:5000/images/"
 
 
   const {user,dispatch} = useContext(Context)
@@ -54,7 +54,7 @@ const Settings = ()=>
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
           <div className="settingsPP">
-            <img src={file ? URL.createObjectURL(file) : PF+user.profilePic}  alt=""  />
+            <img src={file ? URL.createObjectURL(file) : user.profilePic}  alt=""  />
             <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user"/>{" "}
             </label>

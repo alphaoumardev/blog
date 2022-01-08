@@ -13,12 +13,12 @@ const Register = () =>
 
     const handleSubmit= async (e)=>
     {
+        e.preventDefault()
+        setError(false)
         try
         {
-            e.preventDefault()
-            setError(false)
-            const res = await axios.post("/auth/register",{username, email,password})
-            res.data.window.location.replace("/login")
+            const res = await axios.post("/auth/register/",{username, email,password})
+            res.data && window.location.replace("/login")
             console.log(res)
         }
         catch (e)

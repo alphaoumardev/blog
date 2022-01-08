@@ -4,7 +4,7 @@ import {useContext} from "react";
 import {Context} from "../context/Context"
 const Topbar =()=>
 {
-    const PF = "http://localhost:5000/images/"
+    // const PF = "http://localhost:5000/images/"
     const {user, dispatch} = useContext(Context)
     const handleLogout= async ()=>
     {
@@ -34,8 +34,8 @@ const Topbar =()=>
             <div className="top-right">
                 {user?
                 (
-                    <Link to="/settings">
-                        <img className="topImage" src={PF+user.profilePic} alt="mee" />
+                    <Link to="/settings" className="link">
+                        <img className="topImage" src={user?.profilePic} alt="mee" />
                     </Link>//"https://diallo.oss-cn-shanghai.aliyuncs.com/photos/diallo.jpg"
                 ):(
                     <ul className="toplist">

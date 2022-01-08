@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Header from '../components/Header';
-import Post from "../components/Post";
+import Posts from "../components/Posts";
 import Sidebar from "../components/Sidebar";
 import './css/home.css'
 import {useLocation} from "react-router-dom";
@@ -15,7 +15,7 @@ const Home = () =>
     {
         const fetchPosts =async  ()=>
         {
-            const res = await axios.get("http://localhost:5000/api/posts" + search);
+            const res = await axios.get("/posts" + search);
             console.log(res)
             setPosts(res.data)
         }
@@ -27,7 +27,7 @@ const Home = () =>
             <>
                 <Header/>
                 <div className="home" >
-                    <Post posts={posts}/>
+                    <Posts posts={posts}/>
                     <Sidebar/>
                 </div>
             </>
